@@ -1,10 +1,12 @@
-##README Project 3 - BEST OF THE BELTLINE!!!!!
+##README Project 3
 
 This is the README for Project 3 for WDI ATL 4.
 
-Wow, it's happening.
+### Best of the BeltLine
 
-Tech Used:
+A simple site for discovering the best of the BeltLine.
+
+#### Tech Used:
 
 Express, EJS, Bootstrap, and lots of love
 
