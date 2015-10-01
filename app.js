@@ -4,10 +4,16 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var methodOverride = require('method-override');
+var session = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
+var TwitterStrategy = require('passport-twitter');
+var FacebookStrategy = require('passport-facebook');
+//**************************************
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+//**************************************
 var app = express();
 
 // view engine setup
@@ -16,14 +22,39 @@ app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+//****** Configure Express ****************
+app.use(logger('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.session({ secret: 'sasswatchrule' }));
+app.use(session({secret: 'sasswatchrule', saveUninitialized: true, resave: true}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', routes);
 app.use('/users', users);
+
+//********** Passport Section **************
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password'
+  },
+  function(username, password, done) {
+    User.findOne({ username: username }, function(err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,3 +89,6 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+var port = process.env.PORT || 5000; //select your port or let it pull from your .env file
+app.listen(port);
+console.log("listening on " + port + "!");
