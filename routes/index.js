@@ -4,13 +4,17 @@ var passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Best of the BeltLine' }, {user: req.user});
+  res.render('index', { title: 'Best of the BeltLine' });
 });
 
 //******** Passport Routes **********
-//displays our signup page
+//displays our signin page
 router.get('/signin', function(req, res){
   res.render('signin');
+});
+//displays our signup page
+router.get('/signup', function(req, res){
+  res.render('signup');
 });
 
 //sends the request through our local signup strategy, and if successful takes user to homepage, otherwise returns then to signin page
