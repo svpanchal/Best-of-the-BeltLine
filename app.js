@@ -37,7 +37,8 @@ app.use(passport.session());
 app.use('/', routes);
 app.use('/users', users);
 
-//********** Passport Section **************
+//********** Passport Section ***************************
+//***********Local Strategy*****************************
 passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
@@ -55,6 +56,33 @@ passport.use(new LocalStrategy({
     });
   }
 ));
+//**************Facebook Strategy****************************
+// passport.use(new FacebookStrategy({
+//     clientID: FACEBOOK_APP_ID,
+//     clientSecret: FACEBOOK_APP_SECRET,
+//     callbackURL: "http://www.example.com/auth/facebook/callback"
+//   },
+//   function(accessToken, refreshToken, profile, done) {
+//     User.findOrCreate(..., function(err, user) {
+//       if (err) { return done(err); }
+//       done(null, user);
+//     });
+//   }
+// ));
+
+//************Twitter Strategy***************************
+// passport.use(new TwitterStrategy({
+//     consumerKey: TWITTER_CONSUMER_KEY,
+//     consumerSecret: TWITTER_CONSUMER_SECRET,
+//     callbackURL: "http://www.example.com/auth/twitter/callback"
+//   },
+//   function(token, tokenSecret, profile, done) {
+//     User.findOrCreate(..., function(err, user) {
+//       if (err) { return done(err); }
+//       done(null, user);
+//     });
+//   }
+// ));
 
 // Session-persisted message middleware
 app.use(function(req, res, next){
@@ -72,6 +100,18 @@ app.use(function(req, res, next){
 
   next();
 });
+
+// Passport session setup.
+passport.serializeUser(function(user, done) {
+  console.log("serializing " + user.username);
+  done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+  console.log("deserializing " + obj);
+  done(null, obj);
+});
+//***********************************************
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
