@@ -11,4 +11,10 @@ router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About Best of the BeltLine' });
 });
 
+
+/* GET Show Page */
+router.get('/show', function(req, res, next) {
+  res.render('show', { title: 'Welcome!' });
+});
+
 module.exports = router;

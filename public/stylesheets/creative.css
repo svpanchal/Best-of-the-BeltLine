@@ -56,6 +56,12 @@ p {
   text-shadow:2px 2px black;
 }
 
+#dropdownMenu1 {
+  color: #f05f40;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
 .bg-primary {
     background-color: #f05f40;
 }
