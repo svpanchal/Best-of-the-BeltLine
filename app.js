@@ -11,6 +11,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var TwitterStrategy = require('passport-twitter');
 var FacebookStrategy = require('passport-facebook');
+var flash = require('connect-flash');
 //**************************************
 var routes = require('./routes/index');
 var users = require('./routes/users');
