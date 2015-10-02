@@ -186,19 +186,13 @@ header {
     -o-background-size: cover;
 }
 
-header < .about {
-  position: relative;
-  width: 100%;
-  min-height: auto;
-  text-align: center;
-  color: #fff;
+.about{
   background-image: url(../img/Sculptures_Atlanta_beltline.jpg);
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-
 }
 
 header .header-content {
