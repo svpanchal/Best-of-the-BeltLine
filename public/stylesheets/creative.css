@@ -173,20 +173,23 @@ aside {
 }
 
 header {
-    position: relative;
-    width: 100%;
-    min-height: auto;
-    text-align: center;
-    color: #fff;
-    background-image: url(../img/header.jpg);
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  text-align: center;
+  color: #fff;
+  background-image: url(../img/header.jpg);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 
-.about{
+.about {
+  position: relative;
+  width: 100%;
+  text-align: center;
   background-image: url(../img/Sculptures_Atlanta_beltline.jpg);
   background-position: center;
   -webkit-background-size: cover;
