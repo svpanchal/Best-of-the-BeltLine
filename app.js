@@ -4,17 +4,30 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 var methodOverride = require('method-override');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var TwitterStrategy = require('passport-twitter');
 var FacebookStrategy = require('passport-facebook');
+var flash = require('connect-flash');
 //**************************************
 var routes = require('./routes/index');
 var users = require('./routes/users');
 //**************************************
 var app = express();
+
+// Connect to database
+mongoose.connect('mongodb://localhost/beltline');
+mongoose.connection.on('error', function(err) {
+  console.error('MongoDB connection error: ' + err);
+  process.exit(-1);
+  }
+);
+mongoose.connection.once('open', function() {
+  console.log("Mongoose has connected to MongoDB!");
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,32 +40,67 @@ app.use(logger('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(express.session({ secret: 'sasswatchrule' }));
 app.use(session({secret: 'sasswatchrule', saveUninitialized: true, resave: true}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 app.use('/', routes);
 app.use('/users', users);
 
 //********** Passport Section ***************************
 //***********Local Strategy*****************************
-passport.use(new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password'
-  },
-  function(username, password, done) {
-    User.findOne({ username: username }, function(err, user) {
-      if (err) { return done(err); }
+// Use the LocalStrategy within Passport to login/”signin” users.
+passport.use('local-signin', new LocalStrategy({
+  usernameField : 'email',
+  passwordField : 'password',
+  passReqToCallback : true //allows us to pass back the request to the callback
+},
+
+  function(req, email, password, done) {
+    funct.localAuth(email, password)
+    .then(function (user) {
+      if (user) {
+        console.log("LOGGED IN AS: " + user.username);
+        req.session.success = 'You are successfully logged in ' + user.username + '!';
+        done(null, user);
+      }
       if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
+        console.log("COULD NOT LOG IN");
+        req.session.error = 'Could not log user in. Please try again.'; //inform user could not log them in
+        done(null, user);
       }
-      if (!user.validPassword(password)) {
-        return done(null, false, { message: 'Incorrect password.' });
+    })
+    .fail(function (err){
+      console.log(err.body);
+    });
+  }
+));
+// Use the LocalStrategy within Passport to register/"signup" users.
+passport.use('local-signup', new LocalStrategy({
+  usernameField : 'email',
+  passwordField : 'password',
+  passReqToCallback : true   //allows us to pass back the request to the callback
+  },
+  function(req, email, password, done) {
+    funct.localReg(email, password)
+    .then(function (user) {
+      if (user) {
+        console.log("REGISTERED: " + user.username);
+        req.session.success = 'You are successfully registered and logged in ' + user.username + '!';
+        done(null, user);
       }
-      return done(null, user);
+      if (!user) {
+        console.log("COULD NOT REGISTER");
+        req.session.error = 'That username is already in use, please try a different one.'; //inform user could not log them in
+        done(null, user);
+      }
+    })
+    .fail(function (err){
+      console.log(err.body);
     });
   }
 ));
