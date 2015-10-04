@@ -53,27 +53,34 @@ router.get('/logout', function(req, res, next){
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at
 //     /auth/facebook/callback
-//router.get('/auth/facebook', passport.authenticate('facebook'));
+router.get('/auth/facebook', passport.authenticate('facebook'), function(req, res){
+});
 
 // Facebook will redirect the user to this URL after approval.  Finish the
 // authentication process by attempting to obtain an access token.  If
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
-// router.get('/auth/facebook/callback',
-//   passport.authenticate('facebook', { successRedirect: '/',
-//                                       failureRedirect: '/signin' }));
+
+router.get('/auth/facebook/callback', passport.authenticate('facebook', {
+   failureRedirect: '/signup' }),
+   function(req, res) {
+      res.redirect('/');
+});
 //**************Twitter routes******************
 // Redirect the user to Twitter for authentication.  When complete, Twitter
 // will redirect the user back to the application at
 //   /auth/twitter/callback
-// router.get('/auth/twitter', passport.authenticate('twitter'));
+router.get('/auth/twitter', passport.authenticate('twitter'),
+function(req, res){
+});
 
 // Twitter will redirect the user to this URL after approval.  Finish the
 // authentication process by attempting to obtain an access token.  If
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
-// router.get('/auth/twitter/callback',
-//   passport.authenticate('twitter', { successRedirect: '/',
-//                                      failureRedirect: '/signin' }));
+router.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/signup' }),
+function(req, res) {
+ res.redirect('/');
+});
 //*******************************************
 module.exports = router;

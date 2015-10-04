@@ -9,7 +9,9 @@ var UserSchema = new Schema({
       email: String,
       password: String,
       firstName: String,
-      lastName: String
+      lastName: String,
+      oauthID: Number,
+      created: Date
     }
      //will add comments here like:== comments: [Comment.schema] ==
 });

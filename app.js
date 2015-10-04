@@ -13,6 +13,7 @@ var TwitterStrategy = require('passport-twitter');
 var FacebookStrategy = require('passport-facebook');
 var flash = require('connect-flash');
 var expressLayouts = require('express-ejs-layouts');
+var config = require('./oauth.js');
 //**************************************
 var routes = require('./routes/index');
 var users = require('./routes/users');

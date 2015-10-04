@@ -1,6 +1,8 @@
 //******************Local Strategy*************************
 var localSignupStrategy = require('./local-signup-strategy');
 var localLoginStrategy = require('./local-login-strategy');
+//var facebookLoginStrategy = require('./facebook-strategy');
+//var twitterLoginStrategy = require('./twitter-strategy');
 var User = require('../../models/user');
 
 
@@ -8,6 +10,8 @@ var passportConfig = function(passport) {
 
   passport.use('local-signup', localSignupStrategy);
   passport.use('local-login', localLoginStrategy);
+  //passport.use('facebook', facebookLoginStrategy);
+  //pasport.use('twitter', twitterLoginStrategy);
 
 // Use the LocalStrategy within Passport to register/"signup" users.
 
