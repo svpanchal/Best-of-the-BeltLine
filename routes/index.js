@@ -37,7 +37,7 @@ router.post('/signup', function(req, res, next) {
 router.post('/login', function(req, res, next){
   var loginProperty = passport.authenticate('local-login', {
   successRedirect: '/',
-  failureRedirect: '/login',
+  failureRedirect: '/signup',
   failureFlash: true
   });
   return loginProperty(req, res, next);
