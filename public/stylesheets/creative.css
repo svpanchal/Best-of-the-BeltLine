@@ -11,7 +11,7 @@ body {
 }
 
 body {
-    font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+    font-family: 'Merriweather', Arial,sans-serif;
 }
 
 hr {
@@ -495,4 +495,17 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #222;
+}
+
+
+#signin_page {
+  color: #fff;
+  font-weight: 300;
+  margin-left: 20px;
+  background-image: url(../img/signup.jpg);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }

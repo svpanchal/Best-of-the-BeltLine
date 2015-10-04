@@ -1,17 +1,19 @@
- <div class="jumbotron">
- <h2>Create a new account</h2>
-  <form id="local-reg" class="collapse" action="/local-reg" method="post">
+<% include ./partials/head %>
+
+ <h2>Create your account</h2>
+  <form id="local-reg" action="/local-reg" method="post">
     <div>
         <p></p>
-        <label>New Username:</label>
+        <label>Username:</label>
         <input type="text" name="username"/>
     </div>
     <div>
-        <label>New Password:</label>
+        <label>Password:</label>
         <input type="password" name="password"/>
     </div>
     <div>
-        <input type="submit" class="btn btn-primary btn-sm" value="Register"/>
+        <input type="submit" class="btn btn-primary btn-sm" value="Signup"/>
     </div>
   </form>
-</div>
+
+<% include ./partials/footer %>

@@ -1,34 +1,36 @@
-  <% include ./partials/head %>
+<% include ./partials/head %>
 
-  <body id="page-top">
-
-<div class="jumbotron">
+<body id="page-top">
+  <div id="signin_page">
   <h1>Sign in</h1>
-  <p>Please sign-in with your password, Twitter or Facebook account to access our website</p>
+  <p>Please signin using your password or your Google or Facebook account</p>
   <p>
     <!-- <a data-toggle="collapse" href="#local" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> Sign in Locally</a> -->
-    <a href="/auth/twitter" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> Sign in with Twitter</a><br/>
-    <a href="/auth/facebook" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> Sign in with Facebook</a>
+    <a href="/auth/twitter" class="btn btn-social.btn-lg btn-google" role="button">Use Google+</a>
+    <br>
+    <br>
+    <a href="/auth/facebook" class="btn btn-social.btn-lg btn-facebook" role="button">Use Facebook</a>
   </p>
 
 <!--   <div id="local" class="collapse">
     <a data-toggle="collapse" href="#local-sign-in" class="btn btn-default btn-md" role="button">I already have an account</a>
     <a data-toggle="collapse" href="#local-reg" class="btn btn-default btn-md" role="button">I need to make an account</a>
   </div> -->
-  <h2>Sign in with existing account</h2>
-  <form id="local-sign-in" class="collapse" action="/login" method="post">
-    <div>
-        <p></p>
+  <h4>Sign in with existing account</h4>
+      <div id="input_box">
         <label>Username:</label>
-        <input type="text" name="username"/>
-    </div>
-    <div>
+        <input type="text" style='color: black' name="username"/>
+        <br>
         <label>Password:</label>
-        <input type="password" name="password"/>
-    </div>
+        <input type="password" style='color: black' name="password"/>
+      </div>
+
     <div>
         <input type="submit" class="btn btn-primary btn-sm" value="Log In"/>
     </div>
   </form>
 </div>
-  <% include ./partials/footer %>
+
+<br>
+
+<% include ./partials/footer %>

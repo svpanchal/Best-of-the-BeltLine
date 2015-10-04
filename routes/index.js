@@ -21,11 +21,11 @@ router.get('/show', function(req, res, next) {
 //******** Passport Routes **********
 //displays our signin page
 router.get('/signin', function(req, res){
-  res.render('signin');
+  res.render('signin', {title: 'Signin'});
 });
 //displays our signup page
 router.get('/signup', function(req, res){
-  res.render('signup');
+  res.render('signup', {title: 'Signup'});
 });
 
 //sends the request through our local signup strategy, and if successful takes user to homepage, otherwise returns then to signin page
