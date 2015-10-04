@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
-var User = require('./User');
+//var User = require('./user');
 var Schema = mongoose.Schema;
 
 
 var EventSchema = new Schema({
       name: String,
       date: Date,
-      location: [{type: mongoose.Schema.ObjectId, ref: 'Location'}],
+      //location: [{type: mongoose.Schema.ObjectId, ref: 'Location'}],
       category: String
 });
 
