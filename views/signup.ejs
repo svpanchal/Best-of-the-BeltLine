@@ -2,16 +2,16 @@
 
 <body class="signup_page">
 
- <h3>Create your account</h3>
-  <form id="local-reg" action="/local-reg" method="post">
+ <h2>Create a new account</h2>
+  <form id="local-reg" action="/signup" method="post">
     <div>
         <p></p>
-        <label>Username:</label>
-        <input type="text" name="username"/>
+        <label>Email:</label>
+        <input type="text" style="color: black" name="email" id="email"/>
     </div>
     <div>
-        <label>Password:</label>
-        <input type="password" name="password"/>
+        <label>New Password:</label>
+        <input type="password" style="color: black" name="password" id="password"/>
     </div>
     <div>
         <input type="submit" class="btn btn-primary btn-sm" value="Signup"/>

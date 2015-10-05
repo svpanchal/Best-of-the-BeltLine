@@ -19,6 +19,7 @@
     "ejs": "~2.3.4",
     "express": "~4.13.1",
     "font-awesome": "~4",
+    "express-ejs-layouts": "^1.1.0",
     "express-session": "^1.11.3",
     "method-override": "^2.3.5",
     "mongoose": "^4.1.9",
