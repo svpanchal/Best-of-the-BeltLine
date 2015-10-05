@@ -14,12 +14,12 @@ router.get('/about', function(req, res, next) {
 
 //******** Passport Routes **********
 //displays our signin page
-router.get('/login', function(req, res, next){
-  res.render('signin', {title: "login" });
+router.get('/signin', function(req, res, next){
+  res.render('signin', {title: "Sign In" });
 });
 //displays our signup page
 router.get('/signup', function(req, res, next){
-  res.render('signup', {title: "Signup"});
+  res.render('signup', {title: "Sign Up"});
 });
 
 //sends the request through our local signup strategy, and if successful takes user to homepage, otherwise returns then to signin page
