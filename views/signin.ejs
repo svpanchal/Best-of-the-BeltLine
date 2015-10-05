@@ -1,16 +1,16 @@
 <% include ./partials/head %>
 
-<body id="page-top">
+<body>
   <div id="signin_page">
-  <h1>Sign in</h1>
-  <p>Please signin using your password or your Google or Facebook account</p>
-  <p>
+    <h1>Sign in</h1>
+    <p>Please signin using your password or your Google or Facebook account</p>
+    <p>
     <!-- <a data-toggle="collapse" href="#local" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> Sign in Locally</a> -->
-    <a href="/auth/twitter" class="btn btn-social.btn-lg btn-google" role="button">Use Google+</a>
+    <a href="/auth/google" class="btn btn-social.btn-lg btn-google" role="button">Use Google+</a>
     <br>
     <br>
     <a href="/auth/facebook" class="btn btn-social.btn-lg btn-facebook" role="button">Use Facebook</a>
-  </p>
+    </p>
 
 <!--   <div id="local" class="collapse">
     <a data-toggle="collapse" href="#local-sign-in" class="btn btn-default btn-md" role="button">I already have an account</a>
@@ -18,6 +18,7 @@
   </div> -->
   <h4>Sign in with existing account</h4>
       <div id="input_box">
+        <form>
         <label>Username:</label>
         <input type="text" style='color: black' name="username"/>
         <br>
@@ -28,9 +29,25 @@
     <div>
         <input type="submit" class="btn btn-primary btn-sm" value="Log In"/>
     </div>
-  </form>
-</div>
+    </form>
+  </div>
 
-<br>
+  <center><p>&copy Steven, Ryan, Sorum, Javin</p>
 
-<% include ./partials/footer %>
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/jquery.fittext.js"></script>
+  <script src="js/wow.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="js/creative.js"></script>
+
+  </body>
+
+  </html>
