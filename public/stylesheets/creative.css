@@ -498,10 +498,10 @@ body {
 }
 
 
-#signin_page {
+.signin_page {
+  margin-left: 10px;
   color: #fff;
-  font-weight: 300;
-  margin-left: 20px;
+  text-shadow:2px 2px black;
   background-image: url(../img/signup.jpg);
   background-position: center;
   -webkit-background-size: cover;

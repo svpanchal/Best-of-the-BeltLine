@@ -1,12 +1,11 @@
 <% include ./partials/head %>
 
-<body>
-  <div id="signin_page">
+<body class = "signin_page">
     <h1>Sign in</h1>
-    <p>Please signin using your password or your Google or Facebook account</p>
+    <p>Please sign in using your password or your Twitter or Facebook account</p>
     <p>
     <!-- <a data-toggle="collapse" href="#local" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> Sign in Locally</a> -->
-    <a href="/auth/google" class="btn btn-social.btn-lg btn-google" role="button">Use Google+</a>
+    <a href="/auth/google" class="btn btn-social.btn-lg btn-twitter" role="button">Use Twiter+</a>
     <br>
     <br>
     <a href="/auth/facebook" class="btn btn-social.btn-lg btn-facebook" role="button">Use Facebook</a>
@@ -16,7 +15,7 @@
     <a data-toggle="collapse" href="#local-sign-in" class="btn btn-default btn-md" role="button">I already have an account</a>
     <a data-toggle="collapse" href="#local-reg" class="btn btn-default btn-md" role="button">I need to make an account</a>
   </div> -->
-  <h4>Sign in with existing account</h4>
+  <h4 style>Sign in with an existing account</h4>
       <div id="input_box">
         <form>
         <label>Username:</label>
@@ -30,9 +29,10 @@
         <input type="submit" class="btn btn-primary btn-sm" value="Log In"/>
     </div>
     </form>
-  </div>
 
-  <center><p>&copy Steven, Ryan, Sorum, Javin</p>
+
+      <center><a href="/" class="btn btn-primary btn-xl page-scroll">Home</a>
+        <p>&copy Steven, Ryan, Sorum, Javin</p></center>
 
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
