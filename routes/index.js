@@ -19,8 +19,8 @@ router.get('/about', function(req, res, next) {
 
 //******** Passport Routes **********
 //displays our signin page
-router.get('/signin', function(req, res, next){
-  res.render('signin', {title: "Sign In" });
+router.get('/login', function(req, res, next){
+  res.render('signin', {title: "Sign In", message: req.flash('Login message') });
 });
 //displays our signup page
 router.get('/signup', function(req, res, next){
@@ -30,7 +30,7 @@ router.get('/signup', function(req, res, next){
 //sends the request through our local signup strategy, and if successful takes user to homepage, otherwise returns then to signin page
 router.post('/signup', function(req, res, next) {
   var signUpStrategy = passport.authenticate('local-signup', {
-  successRedirect: '/',
+  successRedirect: '/show',
   failureRedirect: '/signup',
   failureFlash: true
   });
@@ -41,7 +41,7 @@ router.post('/signup', function(req, res, next) {
 //sends the request through our local login/signin strategy, and if successful takes user to homepage, otherwise returns then to signin page
 router.post('/login', function(req, res, next){
   var loginProperty = passport.authenticate('local-login', {
-  successRedirect: '/',
+  successRedirect: '/show',
   failureRedirect: '/signup',
   failureFlash: true
   });
