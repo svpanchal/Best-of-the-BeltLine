@@ -14,7 +14,7 @@ router.get('/about', function(req, res, next) {
 
 //******** Passport Routes **********
 //displays our signin page
-router.get('/signin', function(req, res, next){
+router.get('/login', function(req, res, next){
   res.render('signin', {title: "Sign In" });
 });
 //displays our signup page
