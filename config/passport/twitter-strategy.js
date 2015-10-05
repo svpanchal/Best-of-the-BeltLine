@@ -4,8 +4,8 @@ var User = require('../../models/user');
 var config = require('../../oauth.js');
 
 var strategy = new TwitterStrategy({
- clientID: config.twitter.clientID,
- clientSecret: config.twitter.clientSecret,
+ consumerKey: config.twitter.consumerKey,
+ consumerSecret: config.twitter.consumerSecret,
  callbackURL: config.twitter.callbackURL
 },
 function(accessToken, refreshToken, profile, done) {

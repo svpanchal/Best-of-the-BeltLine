@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 var EventSchema = new Schema({
       name: String,
       date: Date,
-      //location: [{type: mongoose.Schema.ObjectId, ref: 'Location'}],
+      location: [{type: mongoose.Schema.ObjectId, ref: 'Location'}],
       category: String
 });
 

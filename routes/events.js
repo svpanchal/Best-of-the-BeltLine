@@ -27,7 +27,7 @@ router.get('/new', authenticate, function(req, res, next) {
     var event = {
       name: '',
       category: '',
-      //location: '',
+      location: '',
       date: Date.now
     };
     res.render('events/new', {event: event, message: req.flash()});

@@ -61,11 +61,14 @@ router.get('/auth/facebook', passport.authenticate('facebook'), function(req, re
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
 
-router.get('/auth/facebook/callback', passport.authenticate('facebook', {
-   failureRedirect: '/signup' }),
-   function(req, res) {
-      res.redirect('/');
-});
+// router.get('/auth/facebook/callback', passport.authenticate('facebook', {
+//    failureRedirect: '/signup' }),
+//    function(req, res) {
+//       res.redirect('/');
+// });
+router.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { successRedirect: '/',
+                                      failureRedirect: '/login' }));
 //**************Twitter routes******************
 // Redirect the user to Twitter for authentication.  When complete, Twitter
 // will redirect the user back to the application at
@@ -78,7 +81,8 @@ function(req, res){
 // authentication process by attempting to obtain an access token.  If
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
-router.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/signup' }),
+router.get('/auth/twitter/callback', passport.authenticate('twitter', {
+failureRedirect: '/login' }),
 function(req, res) {
  res.redirect('/');
 });
