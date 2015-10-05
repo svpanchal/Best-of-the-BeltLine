@@ -508,6 +508,7 @@ body {
   text-shadow:2px 2px black;
   background-image: url(../img/signup.jpg);
   background-position: center;
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -530,6 +531,6 @@ body {
   height : 498px;
   margin : 0 auto;
   content: ' ';
-  opacity: 0.7;
-  background-color: gray;
+  opacity: 0.9;
+  background-color: rgba(255,255,255,0.5);
 }
