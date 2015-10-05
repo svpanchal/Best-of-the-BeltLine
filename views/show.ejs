@@ -21,11 +21,6 @@
         </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                     <li><a href="#">Profile</a></li>
-                      <li> <% if (!user) { %>
-                        <h4>login, please</h4>
-                        <% } else { %>
-                            <h4>Hello, <%= user.username %>.</h4>
-                            <% } %>
                     <li><a href="#">Settings</a></li>
                   </ul>
                   </div>
@@ -39,8 +34,18 @@
             <div class="header-content">
                 <div class="header-content-inner">
                     <h2>Best of the BeltLine today:</h2>
-                </div>
+                    <div class="container">
+                      <div class="row">
+                        <div class="span4">
+                          <h1>Test</h1>
+                            <p>Test</p>
+                    <div class="img-outer"><img src="https://pbs.twimg.com/profile_images/618647359380000769/g4a6P9Yh.jpg" /></div>
+                  </div>
+                <!-- ... -->
             </div>
+          </div>
+        </div>
+      </div>
         </header>
 
 
