@@ -103,6 +103,6 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-// var port = process.env.PORT || 5000; //select your port or let it pull from your .env file
-// app.listen(port);
-// console.log("listening on " + port + "!");
+var port = process.env.PORT || 5000; //select your port or let it pull from your .env file
+app.listen(port);
+console.log("listening on " + port + "!");
