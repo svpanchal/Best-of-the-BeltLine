@@ -17,7 +17,7 @@ User.findOne({ oauthID: profile.id }, function(err, user) {
    var user = new User({
      oauthID: profile.id,
      name: profile.displayName,
-     created: Date.now()
+     created: Date.now(),
    });
    user.save(function(err) {
      if(err) {

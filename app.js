@@ -53,6 +53,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret: 'sasswatchrule', saveUninitialized: true, resave: true}));
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(flash());
 
 
@@ -102,6 +103,6 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-var port = process.env.PORT || 5000; //select your port or let it pull from your .env file
-app.listen(port);
-console.log("listening on " + port + "!");
+// var port = process.env.PORT || 5000; //select your port or let it pull from your .env file
+// app.listen(port);
+// console.log("listening on " + port + "!");
