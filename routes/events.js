@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Event = require('../models/event');
+var Event = require('../models/Event');
 
 function makeError(res, message, status) {
   res.statusCode = status;
