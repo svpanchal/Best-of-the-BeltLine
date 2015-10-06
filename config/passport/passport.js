@@ -3,7 +3,7 @@ var localSignupStrategy = require('./local-signup-strategy');
 var localLoginStrategy = require('./local-login-strategy');
 var facebookLoginStrategy = require('./facebook-strategy');
 var twitterLoginStrategy = require('./twitter-strategy');
-var User = require('../../models/user');
+var User = require('../../models/User');
 
 
 var passportConfig = function(passport) {
