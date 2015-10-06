@@ -1,6 +1,6 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-var User = require('../../models/user');
+var User = require('../../Models/User');
 var config = require('../../oauth.js');
 
 var strategy = new FacebookStrategy({
