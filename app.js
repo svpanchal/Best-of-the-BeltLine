@@ -27,7 +27,8 @@ var events = require('./routes/events');
 var app = express();
 
 // Connect to database
-mongoose.connect('mongodb://localhost/events');
+// mongoose.connect('mongodb://localhost/events');
+mongoose.connect('mongodb://Slack:ga2015@ds051903.mongolab.com:51903/beltline');
 mongoose.connection.on('error', function(err) {
   console.error('MongoDB connection error: ' + err);
   process.exit(-1);
