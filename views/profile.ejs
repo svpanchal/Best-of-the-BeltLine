@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Node Authentication</title>
+    <title>Facebook Authentication</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <style>
@@ -26,6 +26,7 @@
                         <strong>Name</strong>: <%= user.facebook.myname %><br>
                         <strong>Profile created</strong>: <%= user.facebook.created %><br>
                         <strong>Email</strong>: <%= user.facebook.email %><br>
+                        <strong>Picture</strong>: <img src="<%= user.facebook.photo %>"/><br>
                         <!-- <strong>name</strong>: <%= user.photo %> -->
                     </p>
 

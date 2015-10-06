@@ -17,7 +17,8 @@ var UserSchema = new Schema({
       email: String,
       myname: String,
       oauthID: Number,
-      created: Date
+      created: Date,
+      photo: String
      //will add comments here like:== comments: [Comment.schema] ==
     }
 });
