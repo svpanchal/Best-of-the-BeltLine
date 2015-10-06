@@ -12,8 +12,14 @@ var UserSchema = new Schema({
       lastName: String,
       oauthID: Number,
       created: Date
-    }
+    },
+    facebook :{
+      email: String,
+      myname: String,
+      oauthID: Number,
+      created: Date
      //will add comments here like:== comments: [Comment.schema] ==
+    }
 });
 
 UserSchema.methods.encrypt = function(password) {
