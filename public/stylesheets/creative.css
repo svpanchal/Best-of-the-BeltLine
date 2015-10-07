@@ -525,12 +525,12 @@ body {
   -o-background-size: cover;
 }
 
-.from-box {
+.form-box {
   position: relative;
   width  : 740px;
   height : 498px;
   margin : 0 auto;
   content: ' ';
   opacity: 0.9;
-  background-color: rgba(255,255,255,0.5);
+  /* background-color: rgba(255,255,255,0.5);*/
 }
