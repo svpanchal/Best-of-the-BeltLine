@@ -96,7 +96,7 @@ router.put('/:id', authenticate, function (req, res, next) {
 
 //DELETE an event
 router.delete('/:id', authenticate, function(req, res, next) {
-  Event.findByIdAndRemove(req.params.id, function(err, todo) {
+  Event.findByIdAndRemove(req.params.id, function(err, myEvent) {
     if (err) return next(err);
     if(!myEvent) return next(makeError(res, 'Document not found', 404));
     res.redirect('/events');
