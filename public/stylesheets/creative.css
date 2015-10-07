@@ -544,3 +544,11 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
 }
+
+#events_show {
+  background-image: url(../img/risk.jpg);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
