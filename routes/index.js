@@ -30,12 +30,23 @@ var authenticate = function(req, res, next) {
 router.get('/login', function(req, res, next){
   res.render('signin', {title: "Sign In", message: req.flash() });
 });
+//sends the request through our local login/signin strategy, and if successful takes user to homepage, otherwise returns then to signin page
+router.post('/login', function(req, res, next){
+  var loginProperty = passport.authenticate('local-login', {
+  successRedirect: '/show',
+  failureRedirect: '/login',
+  failureFlash: true
+  });
+  return loginProperty(req, res, next);
+});
 //displays our signup page
 router.get('/signup', function(req, res, next){
   res.render('signup', {title: "Sign Up", message: req.flash()});
 });
+
 router.get('/profile', authenticate, function(req, res) {
         res.render('profile', {
+        title: "Profile",
         user : req.user // get the user out of session and pass to template
         });
     });
@@ -51,15 +62,7 @@ router.post('/signup', function(req, res, next) {
 });
 
 
-//sends the request through our local login/signin strategy, and if successful takes user to homepage, otherwise returns then to signin page
-router.post('/login', function(req, res, next){
-  var loginProperty = passport.authenticate('local-login', {
-  successRedirect: '/show',
-  failureRedirect: '/signup',
-  failureFlash: true
-  });
-  return loginProperty(req, res, next);
-});
+
 
 //logs user out of site, deleting them from the session, and returns to homepage
 router.get('/logout', function(req, res){
@@ -86,7 +89,7 @@ router.get('/auth/facebook', passport.authenticate('facebook', {authType: 'reaut
 // });
 router.get('/auth/facebook/callback',
   passport.authenticate('facebook', { authType: 'reauthenticate',
-                                      successRedirect: '/profile',
+                                      successRedirect: '/show',
                                       failureRedirect: '/login' }));
 //**************Twitter routes******************
 // Redirect the user to Twitter for authentication.  When complete, Twitter
@@ -102,7 +105,7 @@ function(req, res){
 // authentication has failed.
 router.get('/auth/twitter/callback', passport.authenticate('twitter', {
   authType: 'reauthenticate',
-  successRedirect: '/profile',
+  successRedirect: '/show',
   failureRedirect: '/login' }));
 /* GET Twitter View Page */
 // router.get('/twitter', isAuthenticated, function(req, res){

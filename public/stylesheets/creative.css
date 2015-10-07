@@ -501,7 +501,40 @@ body {
     webkit-tap-highlight-color: #222;
 }
 
+.profile {
+    //background-color: rgba(128,128,128,0.8);
+  background-image: url(../img/background1.jpg);
+   background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  min-height: 100%;
+}
+.profile .page-header {
+    margin-top: 80px;
+    color: white;
+    background-color: rgba(0,0,0,0.8);
+    border-bottom: none;
+}
+.profile #mainNav {
+    background-color: rgba(255,255,255,0.8);
+    color: #f05f40;
+}
 
+.profile #mainNav .page-scroll {
+    /*background-color: rgba(255,255,255,0.8);*/
+    color: #f05f40 ;
+}
+.well {
+    background-color: rgba(50,50,50,0.8);
+    color: white;
+    border: none;
+}
+.profile .container .row {
+    margin-top: 140px;
+}
 .signin_page {
   margin-left: 10px;
   color: #fff;

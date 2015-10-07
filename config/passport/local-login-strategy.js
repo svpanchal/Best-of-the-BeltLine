@@ -19,7 +19,7 @@ var strategy = new LocalStrategy(
       if (!user.validPassword(password)) {
         return callback(null, false, req.flash('error', 'Oops! Wrong password.'));
       }
-      return callback(null, user);
+      return callback(null, user, req.flash('message.success', 'You are successfully loged in'));
     });
   });
 

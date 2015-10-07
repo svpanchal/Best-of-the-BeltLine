@@ -1,11 +1,12 @@
 <% include ./partials/head %>
-
+<% include ./partials/message %>
 <body class="signup_page">
  <h1>Create a new account</h1>
   <form id="local-reg" action="/signup" method="post">
     <form role="form">
 
   <div class="form-group">
+  <form id="local-sign-in" action="/signup" method="post" style="margin-left: 10px">
     <div>
 
         <label>First Name:</label>
@@ -18,39 +19,21 @@
     </div>
     <div>
         <p></p>
-
-      <form id="local-sign-in" action="/login" method="post" style="margin-left: 10px">
         <label>Email:</label>
         <input type="text" style="color: black" name="email" id="email"/>
     </div>
     <div>
-<<<<<<< HEAD
-    <p></p>
-        <label>New Password:</label>
-=======
+        <p></p>
         <label>Password:</label>
->>>>>>> 6864987c138f542ac18b1ade77e552445b5fb0e8
         <input type="password" style="color: black" name="password" id="password"/>
     </div>
     <div>
         <input type="submit" class="btn btn-primary btn-sm" value="Signup"/>
     </div>
+    </form>
+    </div>
   </form>
-  <div class="flash">
-                <% if (typeof message !== 'undefined') { %>
-                  <% if (typeof message.error !== 'undefined' && message.error.length > 0) { %>
-                    <div class="bg-danger"><%= message.error %></div>
-                  <% } %>
-                <% if (typeof message.info !== 'undefined' && message.info.length > 0) { %>
-                <div class="bg-info"><%= message.info %></div>
-                <% } %>
-                  <% if (typeof message.success !== 'undefined' && message.success.length > 0) { %>
-                  <div class="bg-success"><%= message.success %></div>
-                  <% } %>
-                <% } %>
-              </div>
-  </div>
-</div>
+  </form>
 
 </body>
 
