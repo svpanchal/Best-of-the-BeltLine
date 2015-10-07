@@ -7,16 +7,10 @@ var User = require('../../Models/User');
 
 
 var passportConfig = function(passport) {
-
-  passport.use('local-signup', localSignupStrategy);
-  passport.use('local-login', localLoginStrategy);
-  passport.use('facebook', facebookLoginStrategy);
-  passport.use('twitter', twitterLoginStrategy);
-
-// Passport session setup.
+  // Passport session setup.
 passport.serializeUser(function(user, callback) {
   //console.log("serializing " + user.username);
-  callback(null, user._id);
+  callback(null, user.id);
 });
 
 passport.deserializeUser(function(id, callback) {
@@ -25,5 +19,12 @@ passport.deserializeUser(function(id, callback) {
     else callback(err, null)
   });
 });
+
+  passport.use('local-signup', localSignupStrategy);
+  passport.use('local-login', localLoginStrategy);
+  passport.use('facebook', facebookLoginStrategy);
+  passport.use('twitter', twitterLoginStrategy);
+
+
 };
 module.exports = passportConfig;

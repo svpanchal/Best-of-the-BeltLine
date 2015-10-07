@@ -19,6 +19,14 @@ router.get('/about', function(req, res, next) {
 
 //******** Passport Routes **********
 //displays our signin page
+var authenticate = function(req, res, next) {
+  if(!req.isAuthenticated()) {
+    res.redirect('/');
+  }
+  else {
+    next();
+  }
+};
 router.get('/login', function(req, res, next){
   res.render('signin', {title: "Sign In", message: req.flash() });
 });
@@ -26,6 +34,11 @@ router.get('/login', function(req, res, next){
 router.get('/signup', function(req, res, next){
   res.render('signup', {title: "Sign Up", message: req.flash()});
 });
+router.get('/profile', authenticate, function(req, res) {
+        res.render('profile', {
+        user : req.user // get the user out of session and pass to template
+        });
+    });
 
 //sends the request through our local signup strategy, and if successful takes user to homepage, otherwise returns then to signin page
 router.post('/signup', function(req, res, next) {
@@ -58,7 +71,7 @@ router.get('/logout', function(req, res){
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at
 //     /auth/facebook/callback
-router.get('/auth/facebook', passport.authenticate('facebook', {authType: 'reauthenticate'}), function(req, res){
+router.get('/auth/facebook', passport.authenticate('facebook', {authType: 'reauthenticate', scope: ['email']}), function(req, res){
 });
 
 // Facebook will redirect the user to this URL after approval.  Finish the
@@ -73,7 +86,7 @@ router.get('/auth/facebook', passport.authenticate('facebook', {authType: 'reaut
 // });
 router.get('/auth/facebook/callback',
   passport.authenticate('facebook', { authType: 'reauthenticate',
-                                      successRedirect: '/show',
+                                      successRedirect: '/profile',
                                       failureRedirect: '/login' }));
 //**************Twitter routes******************
 // Redirect the user to Twitter for authentication.  When complete, Twitter

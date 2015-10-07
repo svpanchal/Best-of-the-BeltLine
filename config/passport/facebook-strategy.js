@@ -6,19 +6,23 @@ var config = require('../../oauth.js');
 var strategy = new FacebookStrategy({
  clientID: config.facebook.clientID,
  clientSecret: config.facebook.clientSecret,
- callbackURL: config.facebook.callbackURL
+ callbackURL: config.facebook.callbackURL,
+ profileFields: ['id', 'displayName', 'link', 'photos', 'emails']
 },
 function(accessToken, refreshToken, profile, done) {
-User.findOne({ oauthID: profile.id }, function(err, user) {
- if(err) { console.log(err); }
- if (!err && user != null) {
-   done(null, user);
- } else {
-   var user = new User({
-     oauthID: profile.id,
-     name: profile.displayName,
-     created: Date.now(),
-   });
+  process.nextTick(function (){
+    User.findOne({ oauthID: profile.id }, function(err, user) {
+    if(err) { console.log(err); }
+      if (!err && user != null) {
+      done(null, user);
+      } else {
+    var user = new User();
+      user.facebook.oauthID = profile.id;
+      user.facebook.myname = profile.displayName;
+      user.facebook.created = Date.now();
+      user.facebook.email = profile.emails[0].value;
+      user.facebook.photo = profile.photos[0].value;
+
    user.save(function(err) {
      if(err) {
        console.log(err);
@@ -29,7 +33,7 @@ User.findOne({ oauthID: profile.id }, function(err, user) {
    });
  };
 });
-}
-);
+});
+});
 
 module.exports = strategy;
