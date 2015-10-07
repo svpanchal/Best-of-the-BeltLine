@@ -20,6 +20,10 @@ var strategy = new LocalStrategy(
         var newUser = new User();
         newUser.local.email = email;
         newUser.local.password = newUser.encrypt(password);
+        newUser.local.created = Date.now();
+        newUser.local.lastName = req.param('lastName');
+        newUser.local.firstName = req.param('firstName');
+
 
         newUser.save(function(err) {
           return callback(err, newUser);

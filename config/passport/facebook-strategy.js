@@ -7,7 +7,7 @@ var strategy = new FacebookStrategy({
  clientID: config.facebook.clientID,
  clientSecret: config.facebook.clientSecret,
  callbackURL: config.facebook.callbackURL,
- profileFields: ['id', 'displayName', 'link', 'photos', 'emails']
+ profileFields: ['id', 'displayName', 'link', 'picture.type(large)', 'emails']
 },
 function(accessToken, refreshToken, profile, done) {
   process.nextTick(function (){

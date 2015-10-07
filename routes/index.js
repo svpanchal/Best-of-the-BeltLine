@@ -102,7 +102,7 @@ function(req, res){
 // authentication has failed.
 router.get('/auth/twitter/callback', passport.authenticate('twitter', {
   authType: 'reauthenticate',
-  successRedirect: '/show',
+  successRedirect: '/profile',
   failureRedirect: '/login' }));
 /* GET Twitter View Page */
 // router.get('/twitter', isAuthenticated, function(req, res){
