@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
-var Event = require('./event');
+var Event = require('./Event');
 var Schema = mongoose.Schema;
 
 //===============Passport=============

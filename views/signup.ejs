@@ -1,10 +1,13 @@
 <% include ./partials/head %>
 
 <body class="signup_page">
-
- <h2>Create a new account</h2>
+ <h1>Create a new account</h1>
   <form id="local-reg" action="/signup" method="post">
+    <form role="form">
+
+  <div class="form-group">
     <div>
+
         <label>First Name:</label>
         <input type="text" style="color: black" name="firstName" id="firstName"/>
     </div>
@@ -15,12 +18,18 @@
     </div>
     <div>
         <p></p>
+
+      <form id="local-sign-in" action="/login" method="post" style="margin-left: 10px">
         <label>Email:</label>
         <input type="text" style="color: black" name="email" id="email"/>
     </div>
     <div>
+<<<<<<< HEAD
     <p></p>
         <label>New Password:</label>
+=======
+        <label>Password:</label>
+>>>>>>> 6864987c138f542ac18b1ade77e552445b5fb0e8
         <input type="password" style="color: black" name="password" id="password"/>
     </div>
     <div>
@@ -40,6 +49,8 @@
                   <% } %>
                 <% } %>
               </div>
+  </div>
+</div>
 
 </body>
 

@@ -192,7 +192,7 @@ header {
   min-height: auto;
   text-align: center;
   color: #fff;
-  background-image: url(../img/header.jpg);
+  background-image: url(../img/header.JPG);
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -506,8 +506,9 @@ body {
   margin-left: 10px;
   color: #fff;
   text-shadow:2px 2px black;
-  background-image: url(../img/signup.jpg);
+  background-image: url(../img/signup.JPG);
   background-position: center;
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -517,9 +518,19 @@ body {
   margin-left: 10px;
   color: #fff;
   text-shadow:2px 2px black;
-  background-image: url(../img/random_pic.jpg);
+  background-image: url(../img/random_pic.JPG);
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+}
+
+.form-box {
+  position: relative;
+  width  : 740px;
+  height : 498px;
+  margin : 0 auto;
+  content: ' ';
+  opacity: 0.9;
+  /* background-color: rgba(255,255,255,0.5);*/
 }
