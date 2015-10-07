@@ -1,6 +1,9 @@
-<title>Show Event</title>
+<% include ../partials/head %>
+
 <main>
+
   <div>
+
     <h3>Show Event</h3>
     <p><b>Title: </b><%= myEvent.title %></p>
     <p><b>Location: </b><%= myEvent.location %></p>
@@ -9,6 +12,7 @@
     <p><b>ID: </b><%= myEvent._id %></p>
 
   </div>
+
   <a href="/events" class="btn btn-primary">Back</a>
   <a href="/events/<%= myEvent._id %>/edit" class="btn btn-danger">Edit</a>
 </main>

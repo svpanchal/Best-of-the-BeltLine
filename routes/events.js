@@ -41,7 +41,7 @@ router.get('/new', authenticate, function(req, res, next) {
 router.get('/:id', function(req, res, next) {
   Event.findById(req.params.id, function (err, myEvent) {
     if (err) return next(err);
-    res.render('events/show', { myEvent: myEvent, message: req.flash() });
+    res.render('events/show', {title: "Events", myEvent: myEvent, message: req.flash() });
   });
 });
 

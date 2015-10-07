@@ -55,7 +55,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, '/public')));
-//app.use(express.session({ secret: 'sasswatchrule' }));
 app.use(session({secret: 'sasswatchrule', saveUninitialized: true, resave: true}));
 app.use(passport.initialize());
 app.use(passport.session());
