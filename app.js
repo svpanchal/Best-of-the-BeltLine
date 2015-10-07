@@ -41,14 +41,14 @@ app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
-app.use(logger('dev'));
+app.use(logger('combined'));
 //****** Configure Express ****************
 app.use(logger('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 //app.use(express.session({ secret: 'sasswatchrule' }));
 app.use(session({secret: 'sasswatchrule', saveUninitialized: true, resave: true}));
 app.use(passport.initialize());
@@ -100,8 +100,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+console.log('Running on %s mode', app.get('env'));
 
 module.exports = app;
-var port = process.env.PORT || 5000; //select your port or let it pull from your .env file
-app.listen(port);
-console.log("listening on " + port + "!");
