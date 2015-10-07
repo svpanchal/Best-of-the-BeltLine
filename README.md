@@ -11,9 +11,6 @@ A simple site for discovering the best of the BeltLine.
 Download it and use nodemon to get that server up and running (port 3000)
 
 
-npm install / update once you cd into this bad boy to make sure you what you
-need.
-
 npm install / update once you cd into this bad boy to make sure you have what
 you need.
 

@@ -19,10 +19,16 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var events = require('./routes/events');
 //**************************************
+
+//var port = process.env.PORT || 5000; //select your port or let it pull from your .env file
+//app.listen(port);
+//console.log("listening on " + port + "!");
+
 var app = express();
 
 // Connect to database
-mongoose.connect('mongodb://localhost/events');
+// mongoose.connect('mongodb://localhost/events');
+mongoose.connect('mongodb://Slack:ga2015@ds051903.mongolab.com:51903/beltline');
 mongoose.connection.on('error', function(err) {
   console.error('MongoDB connection error: ' + err);
   process.exit(-1);
@@ -53,6 +59,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(session({secret: 'sasswatchrule', saveUninitialized: true, resave: true}));
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(flash());
 
 
@@ -67,7 +74,7 @@ app.use(function(req, res, next){
 //********** Routes ****************************
 app.use('/', routes);
 app.use('/users', users);
-app.use('/events', events);
+//app.use('/events', events);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
