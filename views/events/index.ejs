@@ -1,0 +1,20 @@
+
+
+<% include ../partials/head %>
+    <main>
+      <div>
+        <h1>Events:</h1>
+
+        <% myEvents.forEach(function(myEvent) { %>
+        <h4>
+          <form method="POST" action="/events/<%= myEvent._id %>?_method=DELETE">
+            <a href="/events/<%= myEvent._id %>"><%= myEvent %></a>
+            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+          </form>
+        </h4>
+        <% }) %>
+      </div>
+      <a href="/events/new" class="btn btn-primary">New</a>
+    </main>
+
+      <% include ../partials/footer %>
