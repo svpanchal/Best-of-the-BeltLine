@@ -14,11 +14,10 @@ User.findOne({ oauthID: profile.id }, function(err, user) {
  if (!err && user != null) {
    done(null, user);
  } else {
-   var user = new User({
-     oauthID: profile.id,
-     name: profile.displayName,
-     created: Date.now()
-   });
+   var user = new User();
+      user.twitter.oauthID = profile.id;
+      user.twitter.username = profile.username;
+      user.twitter.displayName = profile.displayName;
    user.save(function(err) {
      if(err) {
        console.log(err);

@@ -20,6 +20,13 @@ var UserSchema = new Schema({
       created: Date,
       photo: String
      //will add comments here like:== comments: [Comment.schema] ==
+    },
+    twitter :{
+      id: Number,
+      username: String,
+      oauthID: Number,
+      displayName: String,
+      email: String
     }
 });
 
