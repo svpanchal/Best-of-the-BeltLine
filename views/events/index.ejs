@@ -1,24 +1,29 @@
-<% include ../partials/head %>
-<% include ../partials/navigation %>
-  <body class="events_show">
-    <main style="margin-top:150px">
+    <% include ../partials/head %>
+    <% include ../partials/navigation %>
+
+  <body id="events_show">
+
+
+    <main style="margin-top:100px">
       <div class="container">
-        <h1>Best of Today:</h1>
         <div class="row">
-          <div class="col-md-2 col-md-offset-1">
+          <div class="col-md-4 col">
+            <div id="newbtn">
+          <h2>Add a New Event</h2>
+            <a href="/events/new" class="btn btn-primary btn-lg">New</a>
+            </div>
+          <h2>Current Events:</h2>
 
         <% myEvents.forEach(function(myEvent) { %>
         <h4>
           <form method="POST" action="/events/<%= myEvent._id %>?_method=DELETE">
             <strong><a id="event_page" href="/events/<%= myEvent._id %>"><%= myEvent %></a></strong>
-            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
           </form>
         </h4>
+        <hr>
         <% }) %>
       </div>
-    </div>
   </div>
-      <a href="/events/new" class="btn btn-primary">New</a>
-    </main>
-
+</div>
+</main>
       <% include ../partials/footer %>

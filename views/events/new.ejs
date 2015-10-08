@@ -18,11 +18,10 @@
 <link rel="stylesheet" href="/stylesheets/creative.css" type="text/css">
 
 </head>
-
-  <body>
-  <% include ../partials/navigation %>
-    <div>
-      <h3>NEW</h3>
+<% include ../partials/navigation %>
+  <body class="events_new">
+    <div class="headline">
+      <h2>Create a New Event</h2>
       <form class="event-form" action="/events" method="post">
         <% include ../partials/event-form %>
         <a href="/events" class="btn btn-primary">Back</a>

@@ -533,10 +533,15 @@ body {
     text-shadow: 0px 0px black;
 
 }
-.well {
-    background-color: rgba(50,50,50,0.8);
-    color: white;
+#well {
+    background-color: rgba(50,50,50,0);
+    color: black;
     border: none;
+    font-size: 30px;
+}
+#well h3, #well p {
+  font-size: 30px;
+  text-shadow: 2px 2px grey;
 }
 .profile .container .row {
     margin-top: 140px;
@@ -569,6 +574,10 @@ body {
 .signup-form #button {
     margin-left: 60px;
 }
+.events_new {
+  background-color: #4C4C4C;
+  color: white;
+}
 
 .form-box {
 
@@ -596,9 +605,41 @@ body {
 }
 
 .profile {
-  background-image: url(../img/Heart.jpg);
+  background-image: url(../img/Bricks1.jpg);
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+}
+#events_show {
+  background-image: url(../img/park.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+.headline {
+  margin: 90px 0 0 60px;
+  width: 80%;
+}
+
+footer {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  height: 20px;
+}
+
+footer p {
+  display: inline-block;
+  margin-left: 540px;
+}
+
+#newbtn h2 {
+  display:inline;
+}
+#newbtn a {
+  margin-top: -10px;
+  margin-left: 15px;
 }

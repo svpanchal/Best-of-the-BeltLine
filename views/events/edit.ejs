@@ -4,14 +4,20 @@
   <title>Edit Page</title>
 
   <main>
-    <div>
-      <h3>EDIT:</h3>
-      <form class="event-form" method="POST" action="/events/<%= myEvent._id %>?_method=PUT">
-        <% include ../partials/event-form %>
-        <a href="/events/<%= myEvent._id %>" class="btn btn-primary">Back</a>
-        <button type="submit" class="btn btn-success">Save</button>
-      </form>
-    </div>
+    <div class="headline">
+      <h3>Edit Event</h3>
+          <form class="event-form" method="POST" action="/events/<%= myEvent._id %>?_method=PUT">
+            <% include ../partials/event-form %>
+          <div id="inline-button">
+            <a href="/events/<%= myEvent._id %>" class="btn btn-info">Back</a>
+            <button type="submit" class="btn btn-success">Save</button>
+          </form>
+
+          <form method="POST" style="display: inline" action="/events/<%= myEvent._id %>?_method=DELETE">
+            <button  type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+      </div>
   </main>
 
   <% include ../partials/footer %>
