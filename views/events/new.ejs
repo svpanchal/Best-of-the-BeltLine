@@ -1,0 +1,33 @@
+<!doctype html>
+<head>
+<meta charset="UTF-8">
+  <title>Events</title>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Best of the BeltLine" content="">
+<meta name="Ryan Casalino" content="">
+
+
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="stylesheets/creative.css" type="text/css">
+
+</head>
+
+  <body>
+    <div>
+      <h3>NEW</h3>
+      <form class="event-form" action="/events" method="post">
+        <% include ../partials/event-form %>
+        <a href="/events" class="btn btn-primary">Back</a>
+        <button type="submit" class="btn btn-success">Save</button>
+      </form>
+    </div>
+  
+
+  <% include ../partials/footer %>
