@@ -1,40 +1,39 @@
 <% include ./partials/head %>
 <% include ./partials/message %>
+<% include ./partials/navigation %>
 <body class="signup_page">
-
+<div class="signup-form">
  <h1>Create a new account</h1>
-  <form id="local-reg" action="/signup" method="post">
-    <form role="form">
+  <form id="local-sign-in" action="/signup" method="post" style="margin-left: 10px">
 
   <div class="form-group">
-  <form id="local-sign-in" action="/signup" method="post" style="margin-left: 10px">
     <div>
 
-        <label>First Name:</label>
+        <label>First Name:</label><br/>
         <input type="text" style="color: black" name="firstName" id="firstName"/>
     </div>
     <div>
         <p></p>
-        <label>Last Name:</label>
+        <label>Last Name:</label><br/>
         <input type="text" style="color: black" name="lastName" id="lastName"/>
     </div>
     <div>
         <p></p>
-        <label>Email:</label>
+        <label>Email:</label><br/>
         <input type="text" style="color: black" name="email" id="email"/>
     </div>
     <div>
         <p></p>
-        <label>Password:</label>
+        <label>Password:</label><br/>
         <input type="password" style="color: black" name="password" id="password"/>
     </div>
+    <br/>
     <div>
-        <input type="submit" class="btn btn-primary btn-sm" value="Signup"/>
+        <input type="submit" class="btn btn-primary btn-sm" value="Signup" id="button"/>
     </div>
-    </form>
     </div>
   </form>
-  </form>
+  </div>
 
 </body>
 
