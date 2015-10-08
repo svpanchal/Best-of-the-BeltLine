@@ -30,18 +30,22 @@
 </nav>
 
     <main style="margin-top:150px">
-      <div>
-        <h1>Events:</h1>
+      <div class="container">
+        <h1>Best of Today:</h1>
+        <div class="row">
+          <div class="col-md-2 col-md-offset-1">
 
         <% myEvents.forEach(function(myEvent) { %>
         <h4>
           <form method="POST" action="/events/<%= myEvent._id %>?_method=DELETE">
-            <a href="/events/<%= myEvent._id %>"><%= myEvent %></a>
+            <strong><a id="event_page" href="/events/<%= myEvent._id %>"><%= myEvent %></a></strong>
             <button type="submit" class="btn btn-xs btn-danger">Delete</button>
           </form>
         </h4>
         <% }) %>
       </div>
+    </div>
+  </div>
       <a href="/events/new" class="btn btn-primary">New</a>
     </main>
 

@@ -35,6 +35,10 @@ a {
     transition: all .35s;
 }
 
+#event_page > a {
+  color: #fff;
+}
+
 a:hover,
 a:focus {
     color: #eb3812;
