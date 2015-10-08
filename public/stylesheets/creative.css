@@ -522,14 +522,16 @@ body {
     background-color: rgba(0,0,0,0.8);
     border-bottom: none;
 }
-.profile #mainNav {
+#mainNav {
     background-color: rgba(255,255,255,0.8);
     color: #f05f40;
 }
 
-.profile #mainNav .page-scroll {
+ #mainNav .page-scroll {
     /*background-color: rgba(255,255,255,0.8);*/
     color: #f05f40 ;
+    text-shadow: 0px 0px black;
+
 }
 .well {
     background-color: rgba(50,50,50,0.8);
@@ -540,7 +542,7 @@ body {
     margin-top: 140px;
 }
 .signin_page {
-  margin-left: 10px;
+  margin: 60px 0px 0px 40px;
   color: #fff;
   text-shadow:2px 2px black;
   background-image: url(../img/signup.JPG);
@@ -561,12 +563,15 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
 }
+.signup-form {
+    margin: 55px 10px 10px 35px;
+}
+.signup-form #button {
+    margin-left: 60px;
+}
 
 .form-box {
-  position: relative;
-  width  : 740px;
-  height : 498px;
-  margin : 0 auto;
+
   content: ' ';
   opacity: 0.9;
   /* background-color: rgba(255,255,255,0.5);*/
