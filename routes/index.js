@@ -33,7 +33,7 @@ router.get('/login', function(req, res, next){
 //sends the request through our local login/signin strategy, and if successful takes user to homepage, otherwise returns then to signin page
 router.post('/login', function(req, res, next){
   var loginProperty = passport.authenticate('local-login', {
-  successRedirect: '/show',
+  successRedirect: '/profile',
   failureRedirect: '/login',
   failureFlash: true
   });
@@ -54,7 +54,7 @@ router.get('/profile', authenticate, function(req, res) {
 //sends the request through our local signup strategy, and if successful takes user to homepage, otherwise returns then to signin page
 router.post('/signup', function(req, res, next) {
   var signUpStrategy = passport.authenticate('local-signup', {
-  successRedirect: '/show',
+  successRedirect: '/profile',
   failureRedirect: '/signup',
   failureFlash: true
   });
@@ -89,7 +89,7 @@ router.get('/auth/facebook', passport.authenticate('facebook', {authType: 'reaut
 // });
 router.get('/auth/facebook/callback',
   passport.authenticate('facebook', { authType: 'reauthenticate',
-                                      successRedirect: '/show',
+                                      successRedirect: '/profile',
                                       failureRedirect: '/login' }));
 //**************Twitter routes******************
 // Redirect the user to Twitter for authentication.  When complete, Twitter
@@ -105,7 +105,7 @@ function(req, res){
 // authentication has failed.
 router.get('/auth/twitter/callback', passport.authenticate('twitter', {
   authType: 'reauthenticate',
-  successRedirect: '/show',
+  successRedirect: '/profile',
   failureRedirect: '/login' }));
 /* GET Twitter View Page */
 // router.get('/twitter', isAuthenticated, function(req, res){
