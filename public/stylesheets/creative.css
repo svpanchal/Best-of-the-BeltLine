@@ -589,3 +589,11 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
 }
+
+.profile {
+  background-image: url(../img/Heart.jpg);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
