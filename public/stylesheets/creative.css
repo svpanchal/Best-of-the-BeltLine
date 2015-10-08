@@ -582,7 +582,7 @@ body {
   -o-background-size: cover;
 }
 
-#events_show {
+.events_show {
   background-image: url(../img/risk.jpg);
   background-position: center;
   -webkit-background-size: cover;
