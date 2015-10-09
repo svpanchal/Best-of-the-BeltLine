@@ -534,14 +534,16 @@ body {
 
 }
 #well {
-    background-color: rgba(50,50,50,0);
+    background-color: rgba(255,255,255,0.8);
     color: black;
     border: none;
     font-size: 30px;
+    font-family: 'Indie Flower', cursive;
+    color: #f05f40 ;
 }
 #well h3, #well p {
   font-size: 30px;
-  text-shadow: 2px 2px grey;
+  text-shadow: 2px 2px black;
 }
 .profile .container .row {
     margin-top: 140px;
