@@ -35,9 +35,9 @@ a {
     transition: all .35s;
 }
 
-#event_page > a {
+/*#event_page > a {
   color: #fff;
-}
+}*/
 
 a:hover,
 a:focus {
@@ -585,6 +585,7 @@ body {
   opacity: 0.9;
   /* background-color: rgba(255,255,255,0.5);*/
 }
+
 .header_show{
   margin-left: 10px;
   color: #fff;
@@ -625,16 +626,15 @@ body {
 }
 
 footer {
-  position: absolute;
   text-align: center;
   bottom: 0;
   height: 20px;
 }
 
-footer p {
+/*footer p {
   display: inline-block;
   margin-left: 540px;
-}
+}*/
 
 #newbtn h2 {
   display:inline;
