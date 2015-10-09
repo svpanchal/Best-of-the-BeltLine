@@ -208,12 +208,13 @@ header {
   position: relative;
   width: 100%;
   text-align: center;
-  background-image: url(../img/Sculptures_Atlanta_beltline.jpg);
+  background-image: url(../img/field.jpeg);
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  color: #4C4C4C;
 }
 
 header .header-content {
@@ -577,6 +578,11 @@ body {
 .events_new {
   background-color: #092142;
   color: #c5bebe;
+  background-image: url(../img/Tree.jpeg);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 .form-box {
@@ -604,8 +610,17 @@ body {
   -o-background-size: cover;
 }
 
+.events_showpg {
+  background-image: url(../img/railway.jpg);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  color: white;
+}
+
 .profile {
-  background-image: url(../img/Bricks1.jpg);
+  background-image: url(../img/field.jpeg);
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;

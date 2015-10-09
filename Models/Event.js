@@ -11,7 +11,7 @@ var EventSchema = new Schema({
 });
 
 EventSchema.methods.toString = function() {
-  return (this.title + ' ' +  this.location + ' ' + this.category);
+  return (this.title + ' :: ' +  this.location + ' :: ' + this.category);
 };
 
 module.exports = mongoose.model('Event', EventSchema);
