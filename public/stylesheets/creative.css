@@ -35,9 +35,9 @@ a {
     transition: all .35s;
 }
 
-#event_page > a {
+/*#event_page > a {
   color: #fff;
-}
+}*/
 
 a:hover,
 a:focus {
@@ -535,14 +535,16 @@ body {
 
 }
 #well {
-    background-color: rgba(50,50,50,0);
+    background-color: rgba(255,255,255,0.8);
     color: black;
     border: none;
     font-size: 30px;
+    font-family: 'Indie Flower', cursive;
+    color: #f05f40 ;
 }
 #well h3, #well p {
   font-size: 30px;
-  text-shadow: 2px 2px grey;
+  text-shadow: 2px 2px black;
 }
 .profile .container .row {
     margin-top: 140px;
@@ -591,6 +593,7 @@ body {
   opacity: 0.9;
   /* background-color: rgba(255,255,255,0.5);*/
 }
+
 .header_show{
   margin-left: 10px;
   color: #fff;
@@ -640,16 +643,15 @@ body {
 }
 
 footer {
-  position: absolute;
   text-align: center;
   bottom: 0;
   height: 20px;
 }
 
-footer p {
+/*footer p {
   display: inline-block;
   margin-left: 540px;
-}
+}*/
 
 #newbtn h2 {
   display:inline;
