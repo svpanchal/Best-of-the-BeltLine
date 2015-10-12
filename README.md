@@ -1,6 +1,4 @@
-##README Project 3
-
-This is the README for Project 3 for WDI ATL 4.
+##README Project 3 WDI4 ATL
 
 ### Best of the BeltLine
 
@@ -9,20 +7,25 @@ do so far, but that's cool. It's a young site.
 
 We branched off and worked to our skill set.
 
-We used Trello and had various meetings.
-
 ### How do I work this?
 
 Clone this repo and use nodemon(google it) to get that server up and running (default port 3000)
 
 npm install / update once you cd into this bad boy to make sure you have what
 you need.
-
 #### Stuff Used:
 
 Express, EJS, Bootstrap, Passport
 
-#### People:
+### Link to the live version
+
+https://bestbeltline.herokuapp.com/
+
+### Trello 
+
+https://trello.com/b/B8wdyEea/botb
+
+#### The people that made this:
 
 Javin
 
@@ -32,10 +35,10 @@ Steven
 
 Sorum
 
-#### Issues:
+#### Issues those people had:
 
 • CSS formatting
 
 • Twitter API
 
-#### Wire frame can be found in wire frame folder!
+#### Wire frames can be found in wire frame folder!
